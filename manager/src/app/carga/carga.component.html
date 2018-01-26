@@ -1,7 +1,3 @@
-<mat-card>
-    <form class="example-form">
-        <input placeholder="Selecciona tu archivo" type="file">
-        
-      </form>
-</mat-card>
+<input type="file" #fileInput placeholder="Upload file..." />
+<button type="button" (click)="upload()">Upload</button>
 

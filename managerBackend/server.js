@@ -1,6 +1,7 @@
 var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 var jwt = require('jwt-simple');
 var Usuario = require('./models/Usuario');
 
@@ -64,5 +65,35 @@ app.post('/login', (req, res) => {
 
     res.status(200).send({token});
 });
+
+//-------------------------------------------------  INICIO CARGA DE ARCHIVOS
+
+var storage = multer.diskStorage({ //multers disk storage settings
+    destination: function (req, file, cb) {
+        cb(null, './uploads/');
+    },
+    filename: function (req, file, cb) {
+        var datetimestamp = Date.now();
+        cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1]);
+    }
+});
+
+var upload = multer({ //multer settings
+                storage: storage
+            }).single('file');
+
+app.post('/upload', function(req, res) {
+    console.log('----------------Inicia la carga del archivo-----------------------');
+    upload(req,res,function(err){
+        if(err){
+                console.log(err);
+             res.json({error_code:1,err_desc:err});
+             return;
+        }
+         res.json({error_code:0,err_desc:null});
+    });
+});
+
+//-------------------------------------------------  FIN CARGA DE ARCHIVOS
 
 app.listen(3000);

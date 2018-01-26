@@ -22,4 +22,11 @@ export class ApiService {
             console.log(res.json());
         });
     }
+
+    upload(formData) {
+        this.http.post('http://localhost:3000/upload', formData).subscribe(res => {
+            //this.usuarios = res.json();
+            console.log(res.json());
+        });
+    }
 }
