@@ -1,0 +1,52 @@
+<div style="height: 100%">
+    <mat-toolbar color="primary" class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <h1 class="example-app-name">Responsive App</h1>
+      </mat-toolbar>
+    
+      <mat-sidenav-container class="example-sidenav-container"
+                             [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav style="height: 100%;" #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                     [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+          <mat-nav-list>
+            <a mat-list-item routerLink="/registro">Registrar usuario</a>
+            
+            <a mat-list-item routerLink="/usuario">Usuarios</a>
+            <a mat-list-item routerLink="/carga">Cargar imagen</a>
+          </mat-nav-list>
+        </mat-sidenav>
+    
+        <mat-sidenav-content style="height: 100%">
+    
+            <router-outlet></router-outlet>
+    
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+</div>
+
+
+
+<!-- <mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+      <mat-toolbar>
+          Manager
+          <span style="flex:1 1 auto"></span>
+          <button mat-button routerLink="/registro">Registrar</button>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+
+
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+
+</mat-drawer-container> -->

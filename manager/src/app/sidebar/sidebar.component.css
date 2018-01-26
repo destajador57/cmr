@@ -1,15 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-body { 
-  font-family: Roboto, Arial, sans-serif;
-  margin: 0;
-}
-
-.basic-container {
-  padding: 5px;
-}
-
 /* .example-container {
   position: absolute;
   top: 60px;
@@ -18,15 +6,15 @@ body {
   right: 0;
 } */
 
-/* .example-sidenav {
+.example-sidenav {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 200px;
   background: rgba(255, 0, 0, 0.5);
-} */
+}
 
-/* .example-header {
+.example-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -38,4 +26,4 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-} */
+}
