@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h4>Registrar nuevo usuario</h4>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form>
+            <mat-input-container>
+                <input [(ngModel)]="registroData.correo" name="correo" matInput placeholder="correo" type="email">
+            </mat-input-container>
+            <mat-input-container>
+                <input [(ngModel)]="registroData.contrasena" name="contrasena" matInput placeholder="contraseña" type="password">
+            </mat-input-container>
+            <button (click)="registrar()" mat-raised-button color="primary">Registrar</button>
+        </form>
+    </mat-card-content>
+</mat-card>
