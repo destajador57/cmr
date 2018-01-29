@@ -25,7 +25,6 @@ export class ApiService {
 
     upload(formData) {
         this.http.post('http://localhost:3000/upload', formData).subscribe(res => {
-            //this.usuarios = res.json();
             console.log(res.json());
         });
     }

@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material';
 import { MatListModule } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { MensajeComponent } from './mensaje.component';
@@ -47,6 +48,7 @@ const routes = [
     HttpModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    ToastrModule.forRoot(),
     LayoutModule,
     MatButtonModule,
     MatCardModule,
